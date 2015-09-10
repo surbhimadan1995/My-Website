@@ -1,0 +1,224 @@
+/*
+* {
+    border: red dashed 1px;
+}
+*/
+
+body {
+    -webkit-font-smoothing: subpixel-antialiased;
+    text-rendering: geometricPrecision;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: #2E2E2E;
+}
+a {
+    text-decoration: none;
+}
+#header-image {
+    width: 100%;
+    height: 50vh;
+    z-index: -1;
+    top: 0;
+    position: absolute;
+    background-image: url("bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#header {
+    margin: 0 30px;
+    margin-top: 32vh;
+}
+#header-title {
+    color: white;
+    font-family: 'Lato-Light', sans-serif;
+    font-size: 2em;
+    letter-spacing: 4px;
+}
+#header-menu {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.distributed {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    display: -webkit-flex;
+    -webkit-justify-content: space-between;
+    -webkit-align-items: center;
+    -webkit-flex-wrap: nowrap;
+    -webkit-flex-direction: row;
+}
+.menu-link {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+.menu-link:hover {
+    color: #0FCCFB;
+}
+.dark {
+    background-color: #2E2E2E;
+    color: #CFCFCF;
+    font-family: 'Merriweather-Light', serif;
+}
+.light {
+    background-color: #FFFFFF;
+    color: #3B3B3B;
+    font-family: 'Merriweather', serif;
+}
+.section {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.section-content {
+    max-width: 31em;
+    margin: auto;
+    padding: 25px;
+}
+.section-head {
+    font-family: "Lato-Light", sans-serif;
+    font-size: 2.1em;
+    margin-bottom: 15px;
+    color: #459DB1;
+}
+.section-text {
+    margin-bottom: 1.25em;
+    line-height: 1.5em;
+    letter-spacing: 0.5px;
+}
+.project {
+    padding: 1em 0 2em 0;
+}
+.project-title {
+    font-style: italic;
+    font-size: 2.5em;
+    letter-spacing: 0.075em;
+    text-transform: uppercase;
+    line-height: 1.5em;
+}
+.echo-title {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    margin-right: 1em;
+    float: left;
+    display: inline-block;
+}
+@media only screen and (max-width: 900px) {
+    .lightning-title {
+        margin-bottom: 0.5em;
+        display: block;
+        text-align: left;
+    }
+    #design-image {
+        width: 65%;
+        margin: 20px auto;
+        display: block;
+        border: rgba(0, 0, 0, 1.0) solid 1px;
+    }
+    .design-text {
+        vertical-align: middle;
+        display: inline-block;
+        width: 100%;
+    }
+    .image-set {
+        background-color: #222222;
+        max-width: 100vw;
+        margin: auto;
+        overflow: scroll;
+    }
+}
+@media only screen and (min-width: 901px) {
+    .lightning-title {
+        margin-top: 0.6em;
+        margin-bottom: 0.5em;
+        margin-left: -40%;
+        margin-right: 0.75em;
+        float: left;
+        text-align: right;
+        display: inline-block;
+    }
+    #design-image {
+        width: 50%;
+        margin-left: -40%;
+        margin-right: 2em;
+        vertical-align: middle;
+        display: inline-block;
+        border: rgba(0, 0, 0, 1.0) solid 1px;
+    }
+    .design-text {
+        vertical-align: middle;
+        display: inline-block;
+        width: 80%;
+    }
+    .image-set {
+        background-color: #222222;
+        max-width: 70vw;
+        margin: auto;
+        overflow: scroll;
+    }
+}
+.design-title {
+    padding: 0.25em 0;
+}
+.echo-image {
+    width: 30%;
+    height: 30%;
+    padding: 2vw;
+}
+.lightning-image {
+    width: 40%;
+    display: inline-block;
+    margin: 1%;
+    border: rgba(0, 0, 0, 1.0) solid 1px;
+}
+.contact-link {
+    color: #0745A9;
+}
+#masthead {
+    color: rgba(255, 255, 255, 0.45);
+    font-family: "Lato-Light", sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-align: center;
+    margin: 8px 0;
+}
+p {
+    margin: 0;
+    padding: 0;
+}
+.lightning-video {
+    max-width: 100%;
+    height: auto;
+}
+.video-container {
+    position: relative;
+    padding-bottom: 67%;
+    height: 0;
+    overflow: hidden;
+}
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.video-wrapper {
+    width: 550px;
+    max-width: 80%;
+    margin: 0 auto;
+}

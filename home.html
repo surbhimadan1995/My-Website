@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Nick McKenna</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,300italic|Merriweather:300,400,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="home.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="home.js"></script>
+</head>
+
+
+<body>
+
+    <div id="header-image"></div>
+
+    <div id="header">
+        <div id="header-title">nick mckenna</div>
+        <div id="header-menu" class="distributed">
+            <a class="menu-link" href="#bio">bio</a>
+            <a class="menu-link" href="#projects">projects</a>
+            <a class="menu-link" href="#contact">contact</a>
+            <a class="menu-link" href="NickMcKenna.pdf">resume</a>
+        </div>
+    </div>
+
+    <div class="light section" id="bio">
+        <div class="section-content">
+            <div class="section-head">bio</div>
+
+            <div class="section-text">I like to build things. I approach projects holistically, thinking in terms of features, engineering complexity, useability, and design. Basically, I breathe product.</div>
+            <div class="section-text">I'm an undergrad at Brown University, where I'm majoring in computer science. I also study language, architecture, and the visual arts.</div>
+            <div class="section-text">I like sci-fi, internet memes, writing short stories, and eating great food. I'm addicted to consumer tech articles, and I don't foresee myself ever escaping <em>that</em> black hole.</div>
+            <div class="section-text">I'm thrilled you're here! Let me tell you about what I've worked on.</div>
+        </div>
+    </div>
+
+    <div class="dark section" id="projects">
+        <div class="section-content">
+            <div class="section-head">projects</div>
+        </div>
+
+        <div class="distributed image-set">
+            <img src="echo/home.png" class="echo-image">
+            <img src="echo/read.png" class="echo-image">
+            <img src="echo/resonating.png" class="echo-image">
+            <img src="echo/expanded view.png" class="echo-image">
+        </div>
+
+        <div class="section-content">
+            <div class="project">
+                <div class="project-title echo-title">Echo</div>
+                <div class="section-text">What makes a shareable idea?</div>
+                <div class="section-text"><em>Echo</em> is a an experiment in meme propagation. It models the way an idea spreads through a population using a one-way message system in order to explore the quirks and whimsies that make up popular ideas.</div>
+                <div class="section-text">It starts with a user sharing a message on <em>Echo</em>. It's read by a random user around the world. If they share the message, too, it's read by another user and can be shared again. However, if it isn't passed on, the message chain ends and no one will see the message again.</div>
+                <div class="section-text">A message is more popular the more times it has been <em>echoed</em>. All it takes is a single user to break the chain though, and the message will be <em>muted</em>.</div>
+                <div class="section-text"><em>Echo</em> is an iOS project with a web companion. I conceived of the idea, directed all project-wide style, and designed and engineered the mobile UI.</div>
+            </div>
+        </div>
+
+        <div class="video-wrapper">
+            <div class="video-container">
+                <iframe src="https://player.vimeo.com/video/138032443?autoplay=1&loop=1&color=ffffff&byline=0&portrait=0" width="550" height="371" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen class="lightning-video"></iframe>
+            </div>
+        </div>
+
+        <div class="section-content">
+            <div class="project">
+                <div class="project-title lightning-title">
+                    <p>Lightning</p>
+                    <p>Notes</p>
+                </div>
+                <div class="section-text"><em>Lightning Notes</em> is a note-taking web app. It understands the way you take notes, and can style and structure text as you type.</div>
+                <div class="section-text"><em>Lightning</em> translates rules you define into regular expressions which it uses to detect patterns in your notes for styling.</div>
+                <div class="section-text">A style rule can describe font use for keywords or for text after a keyword, horizonatal alignment, background and text coloring, and more.</div>
+                <div class="section-text">I developed the product idea for <em>Lightning</em>, led interface design efforts, and engineered the text comprehension engine, which includes the process of dynamically compiling user rules into regular expressions.</div>
+            </div>
+
+            <div class="project">
+                <img src="design/brown_cs_2.png" id="design-image">
+                <div class="design-text">
+                    <div class="project-title design-title">Design</div>
+                    <div class="section-text">I love UI design, and prefer to architect the look and feel of my interactive projects from scratch.</div>
+                    <div class="section-text">But I also like to experiment with more free-form graphic design, and enjoy exploring new ideas and techniques.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="light section" id="contact">
+        <div class="section-content">
+            <div class="section-head">contact</div>
+
+            <div class="section-text">I can be reached by <a href="mailto:nick@nmckenna.me" class="contactlink">email</a>. I'd love to hear from you!</div>
+            <div class="section-text">You can also find me on <a href="https://www.linkedin.com/pub/nick-mckenna/6b/2a7/7b0" class="contact-link">LinkedIn</a> and <a href="https://github.com/nighttime" class="contactlink">GitHub</a>.</div>
+        </div>
+    </div>
+
+    <div class="dark" id="masthead">© 2015 Nick McKenna</div>
+
+</body>
+
+</html>
