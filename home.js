@@ -4,13 +4,13 @@ smallSizeThresholdPx = 600;
 
 $(document).ready(function () {
 
-//    var img = $('#header-image')[0];
-//
-//    $('<img/>').attr('src', $(img).attr('src')).load(function () {
-//        $('#header-title').css({
-//            'margin-top': this.height * 0.3 + 'px'
-//        }).show();
-//    });
+    //    var img = $('#header-image')[0];
+    //
+    //    $('<img/>').attr('src', $(img).attr('src')).load(function () {
+    //        $('#header-title').css({
+    //            'margin-top': this.height * 0.3 + 'px'
+    //        }).show();
+    //    });
 
 
     $('a[href^="#"]').on('click', function (e) {
@@ -25,8 +25,3 @@ $(document).ready(function () {
     });
 
 });
-
-//function positionHeader() {
-//    var imageHeight = $('#header-title').height();
-//    
-//}
