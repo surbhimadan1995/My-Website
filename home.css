@@ -56,8 +56,9 @@ a {
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    font-size: 1em;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 0.15em;
     -o-transition: 0.5s;
     -ms-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -85,7 +86,7 @@ a {
 .section-content {
     max-width: 31em;
     margin: auto;
-    padding: 25px;
+    padding: 2em;
 }
 .section-head {
     font-family: "Lato-Light", sans-serif;
@@ -96,7 +97,7 @@ a {
 .section-text {
     margin-bottom: 1.25em;
     line-height: 1.5em;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.0175em;
 }
 .project {
     padding: 1em 0 2em 0;
@@ -138,6 +139,11 @@ a {
         margin: auto;
         overflow: scroll;
     }
+    .echo-image {
+        width: 70%;
+        height: 70%;
+        padding: 2vw;
+    }
 }
 @media only screen and (min-width: 901px) {
     .lightning-title {
@@ -164,18 +170,18 @@ a {
     }
     .image-set {
         background-color: #222222;
-        max-width: 70vw;
+        max-width: 75vw;
         margin: auto;
         overflow: scroll;
+    }
+    .echo-image {
+        width: 30%;
+        height: 30%;
+        padding: 2vw;
     }
 }
 .design-title {
     padding: 0.25em 0;
-}
-.echo-image {
-    width: 30%;
-    height: 30%;
-    padding: 2vw;
 }
 .lightning-image {
     width: 40%;
