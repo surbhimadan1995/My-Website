@@ -71,12 +71,12 @@ a {
 .dark {
     background-color: #2E2E2E;
     color: #CFCFCF;
-    font-family: 'Merriweather-Light', serif;
+    font-family: 'Merriweather-Light', serif !important;
 }
 .light {
     background-color: #FFFFFF;
     color: #3B3B3B;
-    font-family: 'Merriweather', serif;
+    font-family: 'Merriweather', serif !important;
 }
 .section {
     width: 100%;
