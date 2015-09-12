@@ -71,12 +71,13 @@ a {
 .dark {
     background-color: #2E2E2E;
     color: #CFCFCF;
-    font-family: 'Merriweather-Light', serif !important;
+    font-family: 'Merriweather', serif;
+    font-weight: 300;
 }
 .light {
     background-color: #FFFFFF;
     color: #3B3B3B;
-    font-family: 'Merriweather', serif !important;
+    font-family: 'Merriweather', serif;
 }
 .section {
     width: 100%;
@@ -89,7 +90,7 @@ a {
     padding: 2em;
 }
 .section-head {
-    font-family: "Lato-Light", sans-serif !important;
+    font-family: "Lato-Light", sans-serif;
     font-size: 2.1em;
     margin-bottom: 15px;
     color: #459DB1;
