@@ -109,6 +109,7 @@ a {
     letter-spacing: 0.075em;
     text-transform: uppercase;
     line-height: 1.5em;
+    font-weight: 400;
 }
 .echo-title {
     margin-top: 0.25em;
