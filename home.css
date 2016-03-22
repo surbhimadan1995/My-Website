@@ -15,15 +15,29 @@ body {
 a {
     text-decoration: none;
 }
-#header-image {
-    width: 100%;
-    height: 50vh;
-    z-index: -1;
-    top: 0;
-    position: absolute;
-    background-image: url("bg2.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+@media only screen and (max-width: 1500px) {
+    #header-image {
+        width: 100%;
+        height: 50vh;
+        z-index: -1;
+        top: 0;
+        position: absolute;
+        background-image: url("bg2_med.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+@media only screen and (min-width: 1501px) {
+    #header-image {
+        width: 100%;
+        height: 50vh;
+        z-index: -1;
+        top: 0;
+        position: absolute;
+        background-image: url("bg2_big.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
 #header {
     margin: 0 30px;
