@@ -17,11 +17,22 @@ $(document).ready(function () {
         e.preventDefault();
 
         var target = this.hash;
-        var $target = $(target);
+        var current = document.documentElement.scrollTop;
+        var destination = $(target).offset().top;
+        var duration = (destination - current) / 4.0;
 
         $('html, body').stop().animate({
-            'scrollTop': $target.offset().top
-        }, 500, 'swing');
+            'scrollTop': destination
+        }, duration, 'swing');
+    });
+
+    var pattern = /[^\n\t]+/g
+    $('.section-body').each(function(index) {
+        var text = $(this).html();
+        text = text.replace(pattern, function(match) {
+            return '<div class="section-text">' + match + '</div>'
+        });
+        $(this).html(text);
     });
 
 });

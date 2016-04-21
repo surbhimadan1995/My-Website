@@ -4,6 +4,11 @@
 }
 */
 
+@font-face {
+    font-family: Din-Regular;
+    src: url('fonts/FF_DIN_Regular.otf');
+}
+
 body {
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: geometricPrecision;
@@ -11,7 +16,37 @@ body {
     padding: 0px;
     width: 100%;
     background-color: #2E2E2E;
+    font-family: 'Open Sans', sans-serif;
 }
+
+#wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -99;
+}
+#header {
+    margin-top: 30vh;
+    padding: 0 30px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.section {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    z-index: 1000;
+}
+
 a {
     text-decoration: none;
 }
@@ -39,15 +74,14 @@ a {
         background-size: cover;
     }
 }
-#header {
-    margin: 0 30px;
-    margin-top: 32vh;
-}
 #header-title {
     color: white;
-    font-family: 'Lato-Light', sans-serif;
+    font-family: 'Din-Regular', sans-serif;
     font-size: 2em;
-    letter-spacing: 4px;
+    letter-spacing: 0.1em;
+}
+.raised-letter {
+    vertical-align: 17%;
 }
 #header-menu {
     width: 100%;
@@ -68,7 +102,7 @@ a {
 }
 .menu-link {
     color: white;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Din-Regular', sans-serif;
     font-weight: 300;
     font-size: 1em;
     text-transform: uppercase;
@@ -85,26 +119,22 @@ a {
 .dark {
     background-color: #2E2E2E;
     color: #CFCFCF;
-    font-family: 'Merriweather', serif;
-    font-weight: 300;
 }
 .light {
     background-color: #FFFFFF;
     color: #3B3B3B;
-    font-family: 'Merriweather', serif;
-}
-.section {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
 }
 .section-content {
     max-width: 31em;
     margin: auto;
     padding: 2em;
 }
+.skinny-content {
+    padding: 1em 2em 0 2em;
+}
 .section-head {
-    font-family: "Lato-Light", sans-serif;
+    font-family: "Din-Regular", sans-serif;
+    font-weight: 300;
     font-size: 2.1em;
     margin-bottom: 15px;
     color: #459DB1;
@@ -112,13 +142,13 @@ a {
 .section-text {
     margin-bottom: 1.25em;
     line-height: 1.5em;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.025em;
 }
 .project {
-    padding: 1em 0 2em 0;
+    padding: 0;
 }
 .project-title {
-    font-style: italic;
+    font-family: Din-Regular, sans-serif;
     font-size: 2.5em;
     letter-spacing: 0.075em;
     text-transform: uppercase;
@@ -186,8 +216,9 @@ a {
     }
     .image-set {
         background-color: #222222;
-        max-width: 75vw;
+        max-width: 65vw;
         margin: auto;
+        margin-bottom: 4em;
         overflow: scroll;
     }
     .echo-image {
@@ -195,6 +226,9 @@ a {
         height: 30%;
         padding: 2vw;
     }
+}
+.tti-title {
+    padding: 0.25em 0;
 }
 .design-title {
     padding: 0.25em 0;
@@ -208,11 +242,15 @@ a {
 .contact-link {
     color: #0745A9;
 }
+.dark-link {
+    color: #80C0E0;
+}
 #masthead {
     color: rgba(255, 255, 255, 0.45);
-    font-family: "Lato-Light", sans-serif;
+    font-family: "Din-Regular", sans-serif;
+    font-weight: 300;
     font-size: 13px;
-    letter-spacing: 1px;
+    letter-spacing: 0.025em;
     text-align: center;
     margin: 8px 0;
 }
@@ -243,4 +281,5 @@ p {
     width: 550px;
     max-width: 80%;
     margin: 0 auto;
+    padding: 0 0 5em 0;
 }
