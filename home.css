@@ -9,6 +9,11 @@
     src: url('fonts/FF_DIN_Regular.otf');
 }
 
+@font-face {
+    font-family: Din-Light;
+    src: url('fonts/FF_DIN_Light.otf');
+}
+
 body {
     -webkit-font-smoothing: subpixel-antialiased;
     text-rendering: geometricPrecision;
@@ -133,11 +138,12 @@ a {
     padding: 1em 2em 0 2em;
 }
 .section-head {
-    font-family: "Din-Regular", sans-serif;
+    font-family: "Din-Light", sans-serif;
     font-weight: 300;
     font-size: 2.1em;
     margin-bottom: 15px;
     color: #459DB1;
+    letter-spacing: 0.02em;
 }
 .section-text {
     margin-bottom: 1.25em;
