@@ -4,14 +4,18 @@
 }
 */
 
+/** {
+    -webkit-font-smoothing: antialiased;
+}*/
+
 @font-face {
     font-family: Din-Regular;
     src: url('fonts/FF_DIN_Regular.otf');
 }
 
 @font-face {
-    font-family: Din-Light;
-    src: url('fonts/FF_DIN_Light.otf');
+    font-family: Din-Medium;
+    src: url('fonts/FF_DIN_Medium.otf');
 }
 
 body {
@@ -38,7 +42,7 @@ body {
     z-index: -99;
 }
 #header {
-    margin-top: 30vh;
+    margin-top: 55vh;
     padding: 0 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -55,14 +59,15 @@ body {
 a {
     text-decoration: none;
 }
+
 @media only screen and (max-width: 1500px) {
     #header-image {
         width: 100%;
-        height: 50vh;
+        height: 70vh;
         z-index: -1;
         top: 0;
         position: absolute;
-        background-image: url("bg2_med.jpg");
+        background-image: url("bg2b_med.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -139,11 +144,12 @@ a {
 }
 .section-head {
     font-family: "Din-Light", sans-serif;
-    font-weight: 300;
-    font-size: 2.1em;
+    /*font-weight: 300;*/
+    font-size: 1.55em;
     margin-bottom: 15px;
     color: #459DB1;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    text-transform: lowercase;
 }
 .section-text {
     margin-bottom: 1.25em;
