@@ -20,7 +20,7 @@
 
 body {
     -webkit-font-smoothing: subpixel-antialiased;
-    text-rendering: geometricPrecision;
+    /*text-rendering: geometricPrecision;*/
     margin: 0px;
     padding: 0px;
     width: 100%;
@@ -42,7 +42,7 @@ body {
     z-index: -99;
 }
 #header {
-    margin-top: 55vh;
+    margin-top: 45vh;
     padding: 0 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -98,6 +98,41 @@ a {
     margin-top: 15px;
     margin-bottom: 25px;
 }
+#project-card-holder {
+    padding: 0 3em;
+    display: inline-block;
+    margin: auto;
+}
+.project-card {
+    width: 15em;
+    height: 15em;
+    /*overflow: hidden;*/
+    display: inline-block;
+    margin: 2em;
+    background-size: 100%;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    border: 1px solid rgba(0,0,0,0.7);
+}
+.project-card:hover {
+    border: 10px solid rgba(0,0,0,0.175);
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+    /*-moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;*/
+}
+#project-card-holder:hover > .project-card {
+    opacity: 0.65;
+}
+#project-card-holder:hover > .project-card:hover {
+    opacity: 1;
+}
 .distributed {
     justify-content: space-between;
     display: flex;
@@ -143,13 +178,23 @@ a {
     padding: 1em 2em 0 2em;
 }
 .section-head {
-    font-family: "Din-Light", sans-serif;
-    /*font-weight: 300;*/
-    font-size: 1.55em;
-    margin-bottom: 15px;
+    margin-bottom: 2em;
+}
+.section-head-box {
+    border: solid 1px #459DB1;
+    display: inline-block;
+}
+.section-head-text {
     color: #459DB1;
     letter-spacing: 0.04em;
     text-transform: lowercase;
+    font-family: "Din-Light", sans-serif;
+    font-size: 1.55em;
+    transform: translateY(-2%);
+    /*-webkit-transform: translateY(-5%);*/
+    /*-ms-transform: translateY(-5%);*/
+    padding: 0.5em 0.7em;
+    vertical-align: middle;
 }
 .section-text {
     margin-bottom: 1.25em;
