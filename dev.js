@@ -8,6 +8,8 @@ projs = {
     ]
 }
 
+var showingModal = false;
+
 
 $(document).ready(function () {
 
@@ -41,16 +43,33 @@ $(document).ready(function () {
             class: 'project-card',
             style: 'background-image: url("projects/pics/' + entries[i].pic + '");'
         });
-        // var img = $('<img>', {
-        //     class: 'project-card-image',
-        //     src: 'projects/pics/' + entries[i].pic
+
+        // var overlay = $('<div>', {
+        //     class: 'overlay'
         // });
-        var overlay = $('<div>', {
-            class: 'overlay'
-        });
-        // img.append(overlay);
-        card.append(overlay);
+        // card.append(overlay);
+
         holder.append(card);
+
+        card.click(phaseModal);
     }
 
 });
+
+function phaseModal() {
+    if (showingModal) {
+        $('.modal-background').remove();
+        showingModal = false;
+        return;
+    }
+
+    showingModal = true;
+
+    let bg = $('<div>', {class: 'modal-background'}),
+        modal = $('<div>', {class: 'modal'});
+
+    bg.append(modal);
+    bg.click(phaseModal);
+
+    $("#wrapper").append(bg);
+}
