@@ -108,11 +108,8 @@ a {
     height: 15em;
     /*overflow: hidden;*/
     display: inline-block;
-    margin: 1.75em;
+    margin: 1.5em;
     background-size: 100%;
-    -moz-transition: all 0.4s;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
     /*border-radius: 3px;*/
     /*border: 6px solid rgba(0,0,0,0.175);*/
 }
@@ -126,12 +123,12 @@ a {
     -webkit-transition: all 0.4s;
     transition: all 0.4s;*/
 }
-#project-card-holder:hover > .project-card {
+/*#project-card-holder:hover > .project-card {
     opacity: 0.6;
 }
 #project-card-holder:hover > .project-card:hover {
     opacity: 1;
-}
+}*/
 .distributed {
     justify-content: space-between;
     display: flex;

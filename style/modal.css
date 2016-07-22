@@ -6,20 +6,38 @@
     left: 0;
     top: 0;
     z-index: 9000;
-    background: rgba(0, 0, 0, 0.5);
-
+    background: rgba(0, 0, 0, 0.8);
     display: none;
-
-    /*display: flex;
-    align-items: center;
-    justify-content: center;*/
 }
 
 .modal {
-    position: absolute;
+    position: fixed;
     /*width: 60%;*/
     /*height: 50%;*/
     /*margin: auto;*/
     z-index: 9001;
-    background-color: red;
+    background-color: #333333;
+}
+
+.presenting-modal-card {
+  opacity: 0 !important;
+}
+
+.modal-animated-entry {
+  -moz-transition: all 0.22s;
+  -webkit-transition: all 0.22s;
+  transition: all 0.22s;
+}
+
+.modal-primary-image {
+  width: 15em;
+  height: 15em;
+  background-size: 100%;
+  margin: 0;
+}
+
+.modal-primary-image-presented {
+  width: 20em;
+  height: 20em;
+  margin: 1.5em;
 }

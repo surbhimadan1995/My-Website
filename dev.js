@@ -9,6 +9,7 @@ projs = {
 }
 
 var showingModal = false;
+var duration_expand = 220;
 
 
 $(document).ready(function () {
@@ -41,12 +42,21 @@ $(document).ready(function () {
   for (var i = 0; i < entries.length; i++) {
     var card = $('<div>', {
       class: 'project-card',
+      id: i,
       style: 'background-image: url("projects/pics/' + entries[i].pic + '");'
     });
 
     holder.append(card);
     card.click(phaseModalFromCard);
   }
+
+  $(".project-card").hover(function() {
+    // Mouse over
+    $(this).siblings().stop().fadeTo(400, 0.5);
+  }, function() {
+    // Mouse out
+    $(this).siblings().stop().fadeTo(400, 1);
+  });
 
 });
 
@@ -60,41 +70,62 @@ function phaseModalFromCard() {
 }
 
 
-function transitionModal(card, enter) {
+function transitionModal(caller, enter) {
+  let doc = $(document);
+  let win = $(window);
+  let c = enter ? $(caller) : $('.presenting-modal-card');
+
+  let x = (c.offset().left - doc.scrollLeft());
+  let y = (c.offset().top - doc.scrollTop());
+
+  h = win.height() * 0.8;
+  w = win.width() * 0.75;
+
   if (enter) {
     let bg = $('<div>', {class: 'modal-background'});
     bg.click(phaseModalFromCard);
 
-    let doc = $(document);
-    let win = $(window);
-
     let modal = $('<div>', {class: 'modal'});
-    let c = $(card);
-    let h = (c.offset().top - doc.scrollTop());
-    let w = (c.offset().left - doc.scrollLeft());
-
+    modal.click(phaseModalFromCard);
     modal.css({
       'height': c.height() + 'px',
       'width': c.width() + 'px',
-      'top': h + 'px',
-      'left': w + 'px'
+      'top': y + 'px',
+      'left': x + 'px'
     });
-    bg.append(modal);
+    buildModal(modal, c.attr('id'));
 
-    $("#wrapper").append(bg);
-    bg.fadeIn(220, 'swing', done=function(){
-      h = win.height() * 0.8;
-      w = win.width() * 0.75;
-      modal.animate({
-        'height': h + 'px',
-        'width': w + 'px',
-        'top': (win.height() - h)/2,
-        'left': (win.width() - w)/2
-      }, 190, 'easeOutCubic');
-    });
+    $('#wrapper').append(bg, modal);
+
+    c.addClass('presenting-modal-card');
+
+    bg.fadeIn(duration_expand, 'swing');
+    modal.animate({
+      'height': h + 'px',
+      'width': w + 'px',
+      'top': (win.height() - h)/2 + 'px',
+      'left': (win.width() - w)/2 + 'px'
+    }, duration_expand, 'easeOutCubic');
+
+    c.trigger('mouseleave');
+
+    runModalPresentationChanges(modal, true);
 
   } else {
-    $('.modal-background').fadeOut(200, 'swing');
+    let modal = $('.modal');
+    let bg = $('.modal-background');
+
+    bg.fadeOut(duration_expand, 'swing', complete=function(){bg.remove();});
+    modal.animate({
+      'height': c.height() + 'px',
+      'width': c.width() + 'px',
+      'top': y + 'px',
+      'left': x + 'px'
+    }, duration_expand, 'easeOutCubic', function(){
+      c.removeClass('presenting-modal-card');
+      $('.modal').remove();
+    });
+    runModalPresentationChanges(modal, false);
   }
 }
 
@@ -107,4 +138,25 @@ function scrolling(on) {
     'overflow': on ? 'auto' : 'hidden',
     'height': on ? 'auto' : '100%'
   });
+}
+
+function buildModal(modal, id) {
+  modal.empty();
+  let entries = projs['entries'];
+  let img = $('<div>', {
+    class: 'modal-primary-image modal-animated-entry',
+    style: 'background-image: url("projects/pics/' + entries[id].pic + '");'
+  });
+
+  modal.append(img);
+}
+
+function runModalPresentationChanges(modal, entry) {
+  let img1 = $('.modal-primary-image');
+
+  if (entry) {
+    img1.addClass('modal-primary-image-presented');
+  } else {
+    img1.removeClass('modal-primary-image-presented');
+  }
 }
