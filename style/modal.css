@@ -6,17 +6,19 @@
     left: 0;
     top: 0;
     z-index: 9000;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.5);
 
-    display: flex;
+    display: none;
+
+    /*display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;*/
 }
 
 .modal {
-    /*position: absolute;*/
-    width: 60%;
-    height: 50%;
+    position: absolute;
+    /*width: 60%;*/
+    /*height: 50%;*/
     /*margin: auto;*/
     z-index: 9001;
     background-color: red;
