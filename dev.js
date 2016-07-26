@@ -4,12 +4,19 @@ smallSizeThresholdPx = 600;
 
 projs = {
   entries: [
-    { pic: "brown_cs.png" }, { pic: "echo.png" }, { pic: "brown_cs.png" }, { pic: "echo.png" }, { pic: "echo.png" }, { pic: "brown_cs.png" }, { pic: "echo.png" }
+    { pic: "brown_cs.png",
+    title: 'brown cs'},
+    { pic: "echo.png" },
+    { pic: "brown_cs.png" },
+    { pic: "echo.png" },
+    { pic: "echo.png" },
+    { pic: "brown_cs.png" },
+    { pic: "echo.png" }
   ]
 }
 
 var showingModal = false;
-var duration_expand = 220;
+var duration_expand = 550;
 
 
 $(document).ready(function () {
@@ -78,8 +85,9 @@ function transitionModal(caller, enter) {
   let x = (c.offset().left - doc.scrollLeft());
   let y = (c.offset().top - doc.scrollTop());
 
-  h = win.height() * 0.8;
-  w = win.width() * 0.75;
+  hw = Math.max(win.height(), win.width());
+  h = hw * 0.4;
+  w = hw * 0.8;
 
   if (enter) {
     let bg = $('<div>', {class: 'modal-background'});
@@ -101,10 +109,10 @@ function transitionModal(caller, enter) {
 
     bg.fadeIn(duration_expand, 'swing');
     modal.animate({
-      'height': h + 'px',
-      'width': w + 'px',
-      'top': (win.height() - h)/2 + 'px',
-      'left': (win.width() - w)/2 + 'px'
+      'height': '40vw',//h + 'px',
+      'width': '80vw',//w + 'px',
+      'top': (win.height() - 0.4 * win.width())/2 + 'px',
+      'left': '10vw'//(win.width() - w)/2 + 'px'
     }, duration_expand, 'easeOutCubic');
 
     c.trigger('mouseleave');
@@ -143,12 +151,19 @@ function scrolling(on) {
 function buildModal(modal, id) {
   modal.empty();
   let entries = projs['entries'];
-  let img = $('<div>', {
-    class: 'modal-primary-image modal-animated-entry',
-    style: 'background-image: url("projects/pics/' + entries[id].pic + '");'
+
+  let img = $('<div>', {class: 'modal-primary-image'});
+  img.css({
+      'background-image': 'url("projects/pics/' + entries[id].pic + '") ',
+      '-moz-transition': 'all ' + duration_expand + 'ms',
+      '-webkit-transition': 'all ' + duration_expand + 'ms',
+      'transition': 'all ' + duration_expand + 'ms'
   });
 
   modal.append(img);
+
+  let title = $('<span>' + entries[id].title + '</span>', {class: 'modal-title'});
+  modal.append(title);
 }
 
 function runModalPresentationChanges(modal, entry) {
