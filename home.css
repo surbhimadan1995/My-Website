@@ -67,7 +67,7 @@ a {
         z-index: -1;
         top: 0;
         position: absolute;
-        background-image: url("images/bg2b_med.jpg");
+        background-image: url("style/images/bg2b_med.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -79,7 +79,7 @@ a {
         z-index: -1;
         top: 0;
         position: absolute;
-        background-image: url("images/bg2b_big.jpg");
+        background-image: url("style/images/bg2b_big.jpg");
         background-repeat: no-repeat;
         background-size: cover;
     }
