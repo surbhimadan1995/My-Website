@@ -11,39 +11,39 @@
 }
 
 .modal {
-    position: fixed;
-    /*width: 60%;*/
-    /*height: 50%;*/
-    /*margin: auto;*/
     z-index: 9001;
     background-color: #CCCCCC;
+    position: fixed;
+}
+
+.modal-presented {
+    width: 80vw;
+    height: 40vw;
+    left: 10vw;
+    top: calc(50vh - 20vw);
 }
 
 .presenting-modal-card {
   opacity: 0 !important;
 }
 
-.modal-primary-image {
-  height: 100%;
-  width: 15em;
-  background-size: 100%;
-  /*margin: 0;*/
-  /*display: inline-block;*/
-  background-size: cover;
-  background-repeat: no-repeat;
+.modal-primary-graphic {
+    z-index: 9002;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.modal-primary-image-presented {
-  position: absolute;
-  height: 100%;
+.modal-primary-graphic-collapsed {
+  height: 15em;
+  width: 15em;
+}
+
+.modal-primary-graphic-presented {
+  height: 40vw;
   width: 40vw;
-  top: 0;
-  left: 0;
-
-
-  /*-webkit-box-sizing: border-box;*/
-  /*-moz-box-sizing: border-box;*/
-  /*box-sizing: border-box;*/
 }
 
 .modal-title {

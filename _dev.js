@@ -71,7 +71,7 @@ $(document).ready(function () {
 function phaseModalFromCard() {
   showingModal = !showingModal;
 
-  //gallery(!showingModal);
+  gallery(!showingModal);
   scrolling(!showingModal);
   transitionModal(this, showingModal);
 }
@@ -87,59 +87,51 @@ function transitionModal(caller, enter) {
 
   hw = Math.max(win.height(), win.width());
   h = hw * 0.4;
-  w = h * 2;
-
-  // let cardFrame = {
-  //   'height': c.height() + 'px',
-  //   'width': c.width() + 'px',
-  //   'top': y + 'px',
-  //   'left': x + 'px'
-  // };
-
-  // let undo_cardFrame = {
-  //   'height': '', 'width': '', 'top': '', 'left': ''
-  // }
+  w = hw * 0.8;
 
   if (enter) {
     let bg = $('<div>', {class: 'modal-background'});
     bg.click(phaseModalFromCard);
 
-    $(`<style id='start-modal-style' type='text/css'> .modal-collapsed {
-      height: ${c.height()}px;
-      width: ${c.width()}px;
-      top: ${y}px;
-      left: ${x}px;
-    } </style>`).appendTo("head");
-
-    let modal = $('<div>', {class: 'modal modal-collapsed'});
-    // modal.css(cardFrame);
+    let modal = $('<div>', {class: 'modal'});
     modal.click(phaseModalFromCard);
+    modal.css({
+      'height': c.height() + 'px',
+      'width': c.width() + 'px',
+      'top': y + 'px',
+      'left': x + 'px'
+    });
     buildModal(modal, c.attr('id'));
 
     $('#wrapper').append(bg, modal);
+
     c.addClass('presenting-modal-card');
 
     bg.fadeIn(duration_expand, 'swing');
-    modal.switchClass('modal-collapsed', 'modal-presented', duration_expand, 'easeOutCubic');
-    // modal.animate({
-    //   'height': '40vw',//h + 'px',
-    //   'width': '80vw',//w + 'px',
-    //   'top': (win.height() - 0.4 * win.width())/2 + 'px',
-    //   'left': '10vw'//(win.width() - w)/2 + 'px'
-    // }, duration_expand, 'easeOutCubic');
-    runModalPresentationChanges(modal, true);
+    modal.animate({
+      'height': '40vw',//h + 'px',
+      'width': '80vw',//w + 'px',
+      'top': (win.height() - 0.4 * win.width())/2 + 'px',
+      'left': '10vw'//(win.width() - w)/2 + 'px'
+    }, duration_expand, 'easeOutCubic');
+
     c.trigger('mouseleave');
+
+    runModalPresentationChanges(modal, true);
 
   } else {
     let modal = $('.modal');
     let bg = $('.modal-background');
 
     bg.fadeOut(duration_expand, 'swing', complete=function(){bg.remove();});
-    // modal.animate(cardFrame, duration_expand, 'easeOutCubic');
-    modal.switchClass('modal-presented', 'modal-collapsed', duration_expand, 'easeOutCubic', complete=function(){
-        c.removeClass('presenting-modal-card');
-        $('.modal').remove();
-        $('#start-modal-style').remove();
+    modal.animate({
+      'height': c.height() + 'px',
+      'width': c.width() + 'px',
+      'top': y + 'px',
+      'left': x + 'px'
+    }, duration_expand, 'easeOutCubic', function(){
+      c.removeClass('presenting-modal-card');
+      $('.modal').remove();
     });
     runModalPresentationChanges(modal, false);
   }
@@ -160,20 +152,26 @@ function buildModal(modal, id) {
   modal.empty();
   let entries = projs['entries'];
 
-  let img = $('<div>', {class: 'modal-primary-graphic'});
-  img.css('background-image', 'url("projects/pics/' + entries[id].pic + '")');
+  let img = $('<div>', {class: 'modal-primary-image'});
+  img.css({
+      'background-image': 'url("projects/pics/' + entries[id].pic + '") ',
+      '-moz-transition': 'all ' + duration_expand + 'ms',
+      '-webkit-transition': 'all ' + duration_expand + 'ms',
+      'transition': 'all ' + duration_expand + 'ms'
+  });
 
   modal.append(img);
 
   let title = $('<span>' + entries[id].title + '</span>', {class: 'modal-title'});
-  //modal.append(title);
+  modal.append(title);
 }
 
 function runModalPresentationChanges(modal, entry) {
-  let graphic = $('.modal-primary-graphic');
-  let image_states = ['modal-primary-graphic-collapsed', 'modal-primary-graphic-presented'];
-  let graphic_out = entry ? image_states[0] : image_states[1];
-  let graphic_in  = entry ? image_states[1] : image_states[0];
+  let img1 = $('.modal-primary-image');
 
-  graphic.switchClass(graphic_out, graphic_in, duration_expand, 'easeOutCubic');
+  if (entry) {
+    img1.addClass('modal-primary-image-presented');
+  } else {
+    img1.removeClass('modal-primary-image-presented');
+  }
 }
