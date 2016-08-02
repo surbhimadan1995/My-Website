@@ -16,7 +16,7 @@ projs = {
 }
 
 var showingModal = false;
-var duration_expand = 550;
+var duration_expand = 450;
 
 
 $(document).ready(function () {
@@ -160,20 +160,27 @@ function buildModal(modal, id) {
   modal.empty();
   let entries = projs['entries'];
 
-  let img = $('<div>', {class: 'modal-primary-graphic'});
+  let img = $('<div>', {class: 'modal-primary-graphic modal-primary-graphic-collapsed'});
   img.css('background-image', 'url("projects/pics/' + entries[id].pic + '")');
-
   modal.append(img);
 
-  let title = $('<span>' + entries[id].title + '</span>', {class: 'modal-title'});
-  //modal.append(title);
+  let textblock = $('<div>', {class: 'modal-text-block modal-text-block-collapsed'});
+  modal.append(textblock);
+
+  let title = $('<div>' + entries[id].title + '</div>', {class: 'modal-title'});
+  textblock.append(title);
 }
 
 function runModalPresentationChanges(modal, entry) {
-  let graphic = $('.modal-primary-graphic');
-  let image_states = ['modal-primary-graphic-collapsed', 'modal-primary-graphic-presented'];
-  let graphic_out = entry ? image_states[0] : image_states[1];
-  let graphic_in  = entry ? image_states[1] : image_states[0];
+  let img = 'modal-primary-graphic', txt = 'modal-text-block';
+  let graphic = $('.' + img), textblock = $('.' + txt);
+  let states = ['-collapsed', '-presented'];
 
+  let graphic_out = img + (entry ? states[0] : states[1]);
+  let graphic_in  = img + (entry ? states[1] : states[0]);
   graphic.switchClass(graphic_out, graphic_in, duration_expand, 'easeOutCubic');
+
+  let text_out = txt + (entry ? states[0] : states[1]);
+  let text_in  = txt + (entry ? states[1] : states[0]);
+  textblock.switchClass(text_out, text_in, duration_expand, 'easeOutCubic');
 }

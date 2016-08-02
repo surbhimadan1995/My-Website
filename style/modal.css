@@ -14,6 +14,7 @@
     z-index: 9001;
     background-color: #CCCCCC;
     position: fixed;
+    overflow: visible;
 }
 
 .modal-presented {
@@ -28,12 +29,12 @@
 }
 
 .modal-primary-graphic {
-    z-index: 9002;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
+  z-index: 9003;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .modal-primary-graphic-collapsed {
@@ -46,7 +47,28 @@
   width: 40vw;
 }
 
+.modal-text-block {
+  z-index: 9002;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal-text-block-collapsed {
+  height: 15em;
+  width: 15em;
+}
+
+.modal-text-block-presented {
+  height: 40vw;
+  width: 40vw;
+  left: 40vw;
+}
+
 .modal-title {
     display: inline-block;
-    font-size: 2em;
+    font-size: 5em;
+    border: dashed red;
+    margin: 1em;
+    padding: 1em;
 }
