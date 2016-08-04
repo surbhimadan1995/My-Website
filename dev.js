@@ -167,7 +167,8 @@ function buildModal(modal, id) {
   let textblock = $('<div>', {class: 'modal-text-block modal-text-block-collapsed'});
   modal.append(textblock);
 
-  let title = $('<div>' + entries[id].title + '</div>', {class: 'modal-title'});
+  let title = $('<div>', {class: 'modal-title'});
+  title.text(entries[id].title);
   textblock.append(title);
 }
 
