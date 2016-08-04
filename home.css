@@ -10,12 +10,12 @@
 
 @font-face {
     font-family: Din-Regular;
-    src: url('fonts/FF_DIN_Regular.otf');
+    src: url('style/fonts/FF_DIN_Regular.otf');
 }
 
 @font-face {
     font-family: Din-Medium;
-    src: url('fonts/FF_DIN_Medium.otf');
+    src: url('style/fonts/FF_DIN_Medium.otf');
 }
 
 body {
