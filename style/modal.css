@@ -12,7 +12,7 @@
 
 .modal {
     z-index: 9001;
-    background-color: #DDDDDD;
+    background-color: #EEEEEE;
     position: fixed;
     overflow: visible;
 }
@@ -57,20 +57,37 @@
 .modal-text-block-collapsed {
   height: 15em;
   width: 15em;
+  opacity: 0;
 }
 
 .modal-text-block-presented {
   height: 40vw;
   width: 40vw;
   left: 40vw;
+  opacity: 0.8;
 }
 
 .modal-title {
     display: block;
-    font-family: Fira-Sans, serif;
+    font-family: 'Din-Medium', sans-serif;
+    letter-spacing: 0.05em;
     font-size: 2em;
     text-transform: uppercase;
-    text-align: center;
-    margin: 20px;
+    text-align: left;
+    margin: 30px;
     padding: 0;
+    border-bottom: medium solid black;
+}
+
+.modal-body-text {
+    display: block;
+    margin: 30px;
+    padding: 0;
+}
+
+.modal-body-text > p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.4;
+    margin-bottom: 0.6em;
 }
