@@ -4,7 +4,7 @@ var duration_expand = 450;
 
 
 $(document).ready(function () {
-    $(window).load(function() {
+    console.log('did document ready');
 
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
@@ -70,7 +70,6 @@ $(document).ready(function () {
     e.preventDefault(); // prevent the default action (scroll / move caret)
   });
 
-});
 });
 
 
