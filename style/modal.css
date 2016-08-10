@@ -17,12 +17,24 @@
     overflow: visible;
 }
 
-.modal-presented {
-    width: 80vw;
-    height: 40vw;
-    left: 10vw;
-    top: calc(50vh - 20vw);
+@media only screen and (max-width: 500px) {
+    .modal-presented {
+        width: 45vh;
+        height: 90vh;
+        left: calc(50vw - 22vh);
+        top: 5vh;
+    }
 }
+
+@media only screen and (min-width: 501px) {
+    .modal-presented {
+        width: 80vw;
+        height: 40vw;
+        left: 10vw;
+        top: calc(50vh - 20vw);
+    }
+}
+
 
 .presenting-modal-card {
   opacity: 0 !important;
@@ -42,9 +54,18 @@
   width: 15em;
 }
 
-.modal-primary-graphic-presented {
-  height: 40vw;
-  width: 40vw;
+@media only screen and (max-width: 500px) {
+    .modal-primary-graphic-presented {
+      height: 45vh;
+      width: 45vh;
+    }
+}
+
+@media only screen and (min-width: 501px) {
+    .modal-primary-graphic-presented {
+      height: 40vw;
+      width: 40vw;
+    }
 }
 
 .modal-text-block {
@@ -52,6 +73,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  overflow-y: scroll;
 }
 
 .modal-text-block-collapsed {
@@ -60,11 +82,23 @@
   opacity: 0;
 }
 
-.modal-text-block-presented {
-  height: 40vw;
-  width: 40vw;
-  left: 40vw;
-  opacity: 0.8;
+@media only screen and (max-width: 500px) {
+    .modal-text-block-presented {
+      height: 45vh;
+      width: 45vh;
+      left: 0;
+      top: 45vh;
+      opacity: 0.8;
+    }
+}
+
+@media only screen and (min-width: 501px) {
+    .modal-text-block-presented {
+      height: 40vw;
+      width: 40vw;
+      left: 40vw;
+      opacity: 0.8;
+    }
 }
 
 .modal-title {
@@ -83,7 +117,6 @@
     display: block;
     margin: 40px;
     padding: 0;
-    overflow-y: scroll;
 }
 
 .modal-body-text > p {
