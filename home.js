@@ -82,11 +82,11 @@ function phaseModalFromCard() {
 
 
 function transitionModal(caller, enter) {
-  let c = enter ? $(caller) : $('.presenting-modal-card');
+  var c = enter ? $(caller) : $('.presenting-modal-card');
 
   if (enter) {
-    let bg = buildModalBG();
-    let modal = buildModal(c);
+    var bg = buildModalBG();
+    var modal = buildModal(c);
     $('#wrapper').append(bg, modal);
 
     fillModalContent(c.attr('id'));
@@ -95,8 +95,8 @@ function transitionModal(caller, enter) {
     c.addClass('presenting-modal-card');
     c.trigger('mouseleave');
 } else {
-    let modal = $('.modal');
-    let bg = $('.modal-background');
+    var modal = $('.modal');
+    var bg = $('.modal-background');
 
     animateModal(modal, bg, false);
     c.removeClass('presenting-modal-card');
@@ -111,16 +111,16 @@ function scrolling(on) {
 }
 
 function buildModalBG() {
-    let bg = $('<div>', {class: 'modal-background'});
+    var bg = $('<div>', {class: 'modal-background'});
     bg.click(phaseModalFromCard);
     return bg;
 }
 
 function setModalCollapsedStyle(c) {
-    let doc = $(document);
-    let win = $(window);
-    let x = (c.offset().left - doc.scrollLeft());
-    let y = (c.offset().top - doc.scrollTop());
+    var doc = $(document);
+    var win = $(window);
+    var x = (c.offset().left - doc.scrollLeft());
+    var y = (c.offset().top - doc.scrollTop());
     h = c.height();
     w = c.width();
 
@@ -136,19 +136,19 @@ function setModalCollapsedStyle(c) {
 function buildModal(c) {
     setModalCollapsedStyle(c);
 
-    let modal = $('<div>', {class: 'modal modal-collapsed'});
+    var modal = $('<div>', {class: 'modal modal-collapsed'});
     modal.click(phaseModalFromCard);
 
-    let img = $('<div>', {class: 'modal-primary-graphic modal-primary-graphic-collapsed'});
+    var img = $('<div>', {class: 'modal-primary-graphic modal-primary-graphic-collapsed'});
     modal.append(img);
 
-    let textblock = $('<div>', {class: 'modal-text-block modal-text-block-collapsed'});
+    var textblock = $('<div>', {class: 'modal-text-block modal-text-block-collapsed'});
     modal.append(textblock);
 
-    let title = $('<div>', {class: 'modal-title'});
+    var title = $('<div>', {class: 'modal-title'});
     textblock.append(title);
 
-    let body = $('<div>', {class: 'modal-body-text'});
+    var body = $('<div>', {class: 'modal-body-text'});
     textblock.append(body);
 
     return modal;
@@ -159,37 +159,37 @@ function fillModalContent(id) {
     id = parseInt(id);
     showingProjectNumber = id;
     $('.presenting-modal-card').removeClass('presenting-modal-card');
-    let c = $('#' + id);
+    var c = $('#' + id);
     c.addClass('presenting-modal-card');
     setModalCollapsedStyle(c);
 
     $('.modal-primary-graphic').css('background-image', 'url("projects/pics/' + projects[id].pics[0] + '")');
     $('.modal-title').text(projects[id].title);
-    let body = $('.modal-body-text');
+    var body = $('.modal-body-text');
     body.empty();
     projects[id].body.split('\n').forEach(function(x){
-        let paragraph = $('<p>');
+        var paragraph = $('<p>');
         paragraph.html(x);
         body.append(paragraph);
     });
 }
 
 function animateModal(modal, bg, entry) {
-    let mod = 'modal',
+    var mod = 'modal',
         img = 'modal-primary-graphic',
         txt = 'modal-text-block';
-    let graphic = $('.' + img),
+    var graphic = $('.' + img),
         textblock = $('.' + txt);
-    let states = ['-collapsed', '-presented'];
+    var states = ['-collapsed', '-presented'];
 
-    let modal_out = mod + (entry ? states[0] : states[1]);
-    let modal_in  = mod + (entry ? states[1] : states[0]);
+    var modal_out = mod + (entry ? states[0] : states[1]);
+    var modal_in  = mod + (entry ? states[1] : states[0]);
 
-    let graphic_out = img + (entry ? states[0] : states[1]);
-    let graphic_in  = img + (entry ? states[1] : states[0]);
+    var graphic_out = img + (entry ? states[0] : states[1]);
+    var graphic_in  = img + (entry ? states[1] : states[0]);
 
-    let text_out = txt + (entry ? states[0] : states[1]);
-    let text_in  = txt + (entry ? states[1] : states[0]);
+    var text_out = txt + (entry ? states[0] : states[1]);
+    var text_in  = txt + (entry ? states[1] : states[0]);
 
     if (entry) {
         bg.fadeIn(duration_expand, 'swing');
