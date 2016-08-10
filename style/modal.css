@@ -74,15 +74,16 @@
     font-size: 2em;
     text-transform: uppercase;
     text-align: left;
-    margin: 30px;
+    margin: 40px;
     padding: 0;
     border-bottom: medium solid black;
 }
 
 .modal-body-text {
     display: block;
-    margin: 30px;
+    margin: 40px;
     padding: 0;
+    overflow-y: scroll;
 }
 
 .modal-body-text > p {
