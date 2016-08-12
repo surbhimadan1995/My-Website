@@ -12,7 +12,7 @@ projects = [
         title: 'wild things',
         body: `This project stemmed from a creative block. I had been working on schoolwork for way too long without a creative outlet, and it was awful.
         One day my mind wandered off into the wilds of the internet, and I decided to follow it.
-        What I found was a constructive way to get my brain moving again. Now when I'm feeling stifled, I draw a new animal head.`
+        What I found was a constructive way to get my brain moving again. Now when I'm feeling stifled, I pick an animal and illustrate it.`
     },
     {
         pics: ['tti.png'],
