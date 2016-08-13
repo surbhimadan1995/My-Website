@@ -10,16 +10,16 @@ projects = [
     {
         pics: ['digital_bear.png', 'digital_wolf.png'],
         title: 'wild things',
-        body: `This project stemmed from a creative block. I had been working on schoolwork for way too long without a creative outlet, and it was awful.
-        One day my mind wandered off into the wilds of the internet, and I decided to follow it.
-        What I found was a constructive way to get my brain moving again. Now when I'm feeling stifled, I pick an animal and illustrate it.`
+        body: `This project stemmed from a mental block. I needed a way to free my mind up from day-to-day tasks and feel creative again.
+        The solution was to focus on a constructive, yet spirited goal.
+        Now when I'm feeling stifled, I'll work on illustrating an animal as part of this collection.`
     },
     {
         pics: ['tti.png'],
         title: 'Two to Infinity',
-        body: `2048: Two to Infinity began with a simple mission: to redo 2048 with <em>class</em> (since the original 2048 cloned Threes! and added insult to injury by using a clunky interface with limited features).
+        body: `2048: Two to Infinity began with a simple mission: to redo 2048 with <em>style</em>.
         I built this iOS game from the ground up to be fresh, charming, and engaging. It includes achievements, unlockable themes, leaderboards, and limitless play. I hope you enjoy it :)
-        To date, Two to Infinity has over 10k downloads. You can <a class="contact-link" href="https://www.youtube.com/watch?v=DarccjOP6zE">watch</a> the trailer and <a class="contact-link" href="https://itunes.apple.com/us/app/beyond-2048-two-to-infinity!/id860372644?mt=8">play</a> it yourself.`
+        To date, Two to Infinity has 11k downloads. You can <a class="contact-link" href="https://www.youtube.com/watch?v=DarccjOP6zE">watch</a> the trailer and <a class="contact-link" href="https://itunes.apple.com/us/app/beyond-2048-two-to-infinity!/id860372644?mt=8">play</a> it yourself.`
     },
     {
         pics: ['echo.png'],
@@ -28,5 +28,13 @@ projects = [
 Echo is an experiment in meme propagation. It models the way an idea spreads through people using one-way messages.
 It starts when a user shares a thought. Another user around the world reads it, and if they share it, it's read by another user, and another, and another, until someone breaks the chain. Then no one will see the message again.
 Echo is an iOS project with a web companion. I conceived the idea, directed project-wide style, and engineered the mobile client.`
+    },
+    {
+        pics: ['growing.png'],
+        title: 'growing',
+        video: '<iframe id="modal-video" src="https://player.vimeo.com/video/178700892?autoplay=1&loop=1&title=0&portrait=0" width height frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+        body: `For this collaborative art project, I was inspired by vegetation and natural growth.
+        I wanted to explore organic motion dictated entirely by computation. Every aspect of the scene is generated probabilistically, which means that each tree is unique.
+        The leaves were painted and scanned by my partner. I conceived the concept and programmed the scene in Processing, carefully tuning and easing by hand to achieve motion that truly feels alive.`
     }
 ]

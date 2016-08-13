@@ -1,11 +1,10 @@
 var showingModal = false;
 var showingProjectNumber = 0;
 var showingProjectGraphicNum = 0;
-var duration_expand = 450;
+var duration_expand = 400;
 
 
 $(document).ready(function () {
-    console.log('did document ready');
 
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
@@ -53,11 +52,13 @@ $(document).ready(function () {
   $(document).keydown(function(e) {
     switch(e.which) {
       case 37: /* left */
-      fillModalContent(showingProjectNumber-1);
+      fillModalContent(showingProjectNumber-1, 0);
+      tryShowVideo();
       break;
 
       case 39: /* right　*/
-      fillModalContent(showingProjectNumber+1);
+      fillModalContent(showingProjectNumber+1, 0);
+      tryShowVideo();
       break;
 
       case 32: /* space */
@@ -75,6 +76,10 @@ $(document).ready(function () {
 
 
 function phaseModalFromCard() {
+  // cleanup...
+  if (showingModal) fillModalContent(showingProjectNumber, 0);
+
+  // now to the real function...
   showingModal = !showingModal;
 
   scrolling(!showingModal);
@@ -90,7 +95,7 @@ function transitionModal(caller, enter) {
     var modal = buildModal(c);
     $('#wrapper').append(bg, modal);
 
-    fillModalContent(c.attr('id'));
+    fillModalContent(c.attr('id'), 0);
     animateModal(modal, bg, true);
 
     c.addClass('presenting-modal-card');
@@ -139,13 +144,15 @@ function buildModal(c) {
     setModalCollapsedStyle(c);
 
     var modal = $('<div>', {class: 'modal modal-collapsed'});
-    modal.click(phaseModalFromCard);
 
     var img = $('<div>', {class: 'modal-primary-graphic modal-primary-graphic-collapsed'});
+    modal.click(phaseModalFromCard);
     modal.append(img);
 
     var arrow_left = $('<div>', {class: 'arrow arrow-left'});
     var arrow_right = $('<div>', {class: 'arrow arrow-right'});
+    arrow_left.click(function(){fillModalContent(showingProjectNumber, showingProjectGraphicNum-1); return false;});
+    arrow_right.click(function(){fillModalContent(showingProjectNumber, showingProjectGraphicNum+1); return false;});
     img.append(arrow_left, arrow_right);
 
     var textblock = $('<div>', {class: 'modal-text-block modal-text-block-collapsed'});
@@ -160,16 +167,28 @@ function buildModal(c) {
     return modal;
 }
 
-function fillModalContent(id) {
-    if (!showingModal || id < 0 || id >= projects.length) return;
+function fillModalContent(id, subindex) {
+    if (!showingModal
+        || id < 0
+        || id >= projects.length
+        || subindex < 0
+        || subindex > projects[id].pics.length-1
+    ) return;
+
     id = parseInt(id);
     showingProjectNumber = id;
+    showingProjectGraphicNum = subindex;
     $('.presenting-modal-card').removeClass('presenting-modal-card');
     var c = $('#' + id);
     c.addClass('presenting-modal-card');
     setModalCollapsedStyle(c);
 
-    $('.modal-primary-graphic').css('background-image', 'url("projects/pics/' + projects[id].pics[0] + '")');
+    $('#modal-video').remove();
+    $('.modal-primary-graphic').css('background-image', 'url("projects/pics/' + projects[id].pics[showingProjectGraphicNum] + '")');
+    $('.arrow').show();
+    if (showingProjectGraphicNum == 0) $('.arrow-left').hide();
+    if (showingProjectGraphicNum == projects[id].pics.length-1) $('.arrow-right').hide();
+
     $('.modal-title').text(projects[id].title);
     var body = $('.modal-body-text');
     body.empty();
@@ -203,7 +222,29 @@ function animateModal(modal, bg, entry) {
         bg.fadeOut(duration_expand, 'swing', complete=function(){bg.remove();});
     }
 
-    modal.switchClass(modal_out, modal_in, duration_expand, 'easeOutCubic', complete=function(){if (!entry) { modal.remove(); }});
+    modal.switchClass(modal_out, modal_in, duration_expand, 'easeOutCubic', complete=function(){
+        if (entry) {
+            tryShowVideo();
+        } else {
+            modal.remove();
+        }
+    });
     graphic.switchClass(graphic_out, graphic_in, duration_expand, 'easeOutCubic');
     textblock.switchClass(text_out, text_in, duration_expand, 'easeOutCubic');
+}
+
+function tryShowVideo() {
+    if (showingModal && projects[showingProjectNumber].video) {
+        var thisnum = showingProjectNumber;
+        var graph = $('.modal-primary-graphic');
+        graph.delay(4000).queue(function(next) {
+            if (showingProjectNumber == thisnum) {
+                var embed = projects[showingProjectNumber].video.replace(/width|height/g, function(x) {
+                    return x + '=' + $('.modal').height();
+                });
+                graph.html(embed);
+            }
+            next();
+        });
+    }
 }
