@@ -1,5 +1,6 @@
 var showingModal = false;
 var showingProjectNumber = 0;
+var showingProjectGraphicNum = 0;
 var duration_expand = 450;
 
 
@@ -100,6 +101,7 @@ function transitionModal(caller, enter) {
 
     animateModal(modal, bg, false);
     c.removeClass('presenting-modal-card');
+    $('.arrow').hide();
   }
 }
 
@@ -141,6 +143,10 @@ function buildModal(c) {
 
     var img = $('<div>', {class: 'modal-primary-graphic modal-primary-graphic-collapsed'});
     modal.append(img);
+
+    var arrow_left = $('<div>', {class: 'arrow arrow-left'});
+    var arrow_right = $('<div>', {class: 'arrow arrow-right'});
+    img.append(arrow_left, arrow_right);
 
     var textblock = $('<div>', {class: 'modal-text-block modal-text-block-collapsed'});
     modal.append(textblock);
