@@ -35,6 +35,7 @@ Echo is an iOS project with a web companion. I conceived the idea, directed proj
         video: '<iframe id="modal-video" src="https://player.vimeo.com/video/178700892?autoplay=1&loop=1&title=0&portrait=0" width height frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
         body: `For this collaborative art project, I was inspired by vegetation and natural growth.
         I wanted to explore organic motion dictated entirely by computation. Every aspect of the scene is generated probabilistically, which means that each tree is unique.
-        The leaves were painted and scanned by my partner. I conceived the concept and programmed the scene in Processing, carefully tuning and easing by hand to achieve motion that truly feels alive.`
+        The leaves were painted and scanned by my partner. I conceived the concept and programmed the scene in Processing, carefully tuning and easing by hand to achieve motion that truly feels alive.
+        Check out the source code <a class="contact-link" href="https://github.com/nighttime/growing">here</a>.`
     }
 ]
