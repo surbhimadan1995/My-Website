@@ -6,6 +6,8 @@ var duration_expand = 400;
 
 $(document).ready(function () {
 
+  $('#me-pic').css('left', ($('.section-head').offset().left - 300) / 2);
+
   $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();
 
