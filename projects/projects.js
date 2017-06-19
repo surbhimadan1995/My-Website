@@ -5,13 +5,13 @@ projects = [
         body: `Lightning Notes is a note-taking web app. It understands the way you take notes, styling and structuring text as you type.
         You define styling rules, which can affect anything from a single keyword to complex patterns in your text. Lightning structures your document so it's ready to go, right away.
         I developed the product idea for Lightning, led interface design efforts, and engineered the text comprehension engine, which dynamically compiles user rules into regexes.
-        <a class="contact-link" href="https://vimeo.com/138032443">Check it out in action!</a>`
+        <a href="https://vimeo.com/138032443">Check it out in action!</a>`
     },
     {
         pics: ['tti.png'],
         title: 'Two to Infinity',
         body: `2048: Two to Infinity began with a simple mission: to redo 2048 with <em>style</em>.
-        I built this iOS game from the ground up to be fresh, charming, and engaging. It includes achievements, unlockable themes, leaderboards, and limitless play. I hope you enjoy it :)
+        I built this iOS game from the ground up to be fresh, charming, and engaging. It includes achievements, unlockable themes, leaderboards, and limitless play. I hope you enjoy it!
         To date, Two to Infinity has 11k downloads. You can <a class="contact-link" href="https://www.youtube.com/watch?v=DarccjOP6zE">watch</a> the trailer and <a class="contact-link" href="https://itunes.apple.com/us/app/beyond-2048-two-to-infinity!/id860372644?mt=8">play</a> it yourself.`
     },
     {

@@ -188,6 +188,9 @@ a {
     /*font-size: 0.8em;*/
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    text-decoration: none;
+    border-bottom: 0;
+
     -o-transition: 0.5s;
     -ms-transition: 0.5s;
     -moz-transition: 0.5s;
@@ -196,6 +199,8 @@ a {
 }
 .menu-link:hover {
     color: #0FCCFB;
+    border-bottom: 0;
+    text-decoration: none;
 }
 .dark {
     background-color: #2E2E2E;
@@ -332,21 +337,17 @@ a {
     margin: 1%;
     border: rgba(0, 0, 0, 1.0) solid 1px;
 }
-.contact-link {
+a {
     color: #0745A9;
     text-decoration: none;
     border-bottom: 0;
 }
-.contact-link:hover {
+a:hover {
+    color: #0745A9;
     border-bottom: 1px solid;
 }
-.dark-link {
-    color: #80C0E0;
-    text-decoration: none;
-    border-bottom: 0;
-}
-.dark-link:hover {
-    border-bottom: 1px solid;
+a:active {
+    color: #4785F9;
 }
 #masthead {
     color: rgba(255, 255, 255, 0.45);
