@@ -1,0 +1,62 @@
+@font-face {
+    font-family: Dala-Floda-Roman;
+    src: url("fonts/Dala Floda/DalaFloda-Roman.otf");
+}
+
+body {
+    /*background-color: #2E2E2E;*/
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(at 67% 50%, #1A173F,#100D26);
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#title-block {
+    position: absolute;
+    top: 27%;
+    left: 15%;
+}
+
+#title {
+    color: white;
+    font-family: 'DalaFloda-RomanNo.2', sans-serif;
+    font-size: 4.5em;
+    letter-spacing: 0.05em;
+}
+
+#subtitle {
+    color: white;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+}
+
+#user-input-area {
+
+}
+
+input[type=text] {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    font-family: 'Avenir', sans-serif;
+    font-size: 1.5em;
+    border: 2px solid rgba(255, 255, 255 0.3);
+    border-radius: 3px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    outline: none;
+}
