@@ -1,5 +1,12 @@
 projects = [
     {
+        pics: ['adulting101.how.png'],
+        title: 'Adulting101.how',
+        body: `Adulting101.how is a personal finance resource for millenials. I launched the site as a bridge to help young adults, who may only have heard about savings accounts, credit scores, loans, and interest, to cross that gap into real knowledge so they can make informed decisions.
+        I believe we can do more to help those without strong financial guidance to become successful and empowered adults. I do detailed research on each topic and synthesize it in a friendly way to best communicate with my novice audience.
+        Check out <a href="adulting101.how">Adulting101.how</a>.`
+    },
+    {
         pics: ['lightning.png'],
         title: 'Lightning Notes',
         body: `Lightning Notes is a note-taking web app. It understands the way you take notes, styling and structuring text as you type.
