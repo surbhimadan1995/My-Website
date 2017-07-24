@@ -19,10 +19,10 @@
 
 @media only screen and (max-width: 500px) {
     .modal-presented {
-        width: 45vh;
-        height: 90vh;
-        left: calc(50vw - 22vh);
-        top: 5vh;
+        width: 100vw;
+        height: 100vh;
+        left: 0;
+        top: 0;
     }
 }
 
@@ -56,8 +56,8 @@
 
 @media only screen and (max-width: 500px) {
     .modal-primary-graphic-presented {
-      height: 45vh;
-      width: 45vh;
+      height: 100vw;
+      width: 100vw;
     }
 }
 
@@ -84,10 +84,10 @@
 
 @media only screen and (max-width: 500px) {
     .modal-text-block-presented {
-      height: 45vh;
-      width: 45vh;
+      height: calc(100vh - 100vw);
+      width: 100vw;
       left: 0;
-      top: 45vh;
+      top: 100vw;
       opacity: 0.8;
     }
 }
