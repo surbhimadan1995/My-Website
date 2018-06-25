@@ -1,10 +1,9 @@
 projects = [
     {
-        pics: ['adulting101.how.png'],
-        title: 'Adulting101.how',
-        body: `Adulting101.how is a personal finance resource for millenials. I launched the site as a bridge to help young adults, who may only have heard about savings accounts, credit scores, loans, and interest, to cross that gap into real knowledge so they can make informed decisions.
-        I believe we can do more to help those without strong financial guidance to become successful and empowered adults. I do detailed research on each topic and synthesize it in a friendly way to best communicate with my novice audience.
-        Check out <a href="https://adulting101.how">Adulting101.how</a>.`
+        pics: ['mesh.jpeg'],
+        title: 'Deep Learning',
+        body: `I have written several projects demonstrating concepts in modern machine learning. I am fascinated by neural-inspired architectures and language processing.
+        Check out my projects on <a href="https://github.com/nighttime/DL-Projects">Github</a>.`
     },
     {
         pics: ['lightning.png'],
